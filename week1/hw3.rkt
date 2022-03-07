@@ -16,3 +16,27 @@
       ((member? (first sent) '(i I me)) (se 'you (switch (butfirst sent))))
       ((member? (first sent) '(you You)) (se 'me (switch (butfirst sent))))
       (else (se (first sent) (switch (butfirst sent)))))))
+
+
+; Provided Solution:
+; (define (switch1 sent)
+;   (se (switch-first (first sent))
+;       (switch-rest (bf sent)) ))
+
+; (define (switch-first wd)
+;   (cond ((equal? wd 'you) 'I)
+; 	((equal? wd 'I) 'you)
+; 	((equal? wd 'me) 'you)
+; 	(else wd) ))
+
+; (define (switch-rest sent)
+;   (if (empty? sent)
+;       '()
+;       (se (switch-one (first sent))
+; 	  (switch-rest (bf sent)) )))
+
+; (define (switch-one wd)
+;   (cond ((equal? wd 'you) 'me)
+; 	((equal? wd 'I) 'you)
+; 	((equal? wd 'me) 'you)
+; 	(else wd) ))

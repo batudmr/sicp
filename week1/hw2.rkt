@@ -4,10 +4,13 @@
 
 #lang simply-scheme
 
+(define (square x)(* x x))
+
 (define (squares nums)
   (if (empty? nums)
       '()
       (se (square (first nums))
 	  (squares (bf nums)) )))
 
-(define (square x)(* x x))
+; Provided Solution:
+; Same as provided answer
